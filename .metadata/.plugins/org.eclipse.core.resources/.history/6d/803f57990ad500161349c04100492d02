@@ -1,9 +1,0 @@
-package receiver.save;
-
-public class SaveToXMLFile {
-
-	public SaveToXMLFile() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

@@ -1,0 +1,9 @@
+package controller.commands;
+
+public class DisplayCommand {
+
+	public DisplayCommand() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,9 @@
+package model.receivers.save;
+
+public class SaveToObjFile {
+
+	public SaveToObjFile() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

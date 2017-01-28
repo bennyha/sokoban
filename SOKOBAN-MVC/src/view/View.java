@@ -1,9 +1,7 @@
 package view;
 
-public class View {
+public interface View {
 
-	public View() {
-		// TODO Auto-generated constructor stub
-	}
-
+	public void displayLevel();
 }
+	

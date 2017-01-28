@@ -1,0 +1,34 @@
+package boot;
+
+import controller.SokobanController;
+import controller.server.CLI;
+import controller.server.MyServer;
+import model.MyModel;
+import view.MyView;
+
+public class Run {
+	
+	public static void main(String args[]) {
+		
+		MyView sokoView = new MyView();
+		MyModel sokoModel = new MyModel();
+		SokobanController sokoController = new SokobanController(sokoModel,sokoView);
+		sokoView.addObserver(sokoController);
+		sokoModel.addObserver(sokoController);
+
+		sokoController.getController().start();
+		if(args.length == 2){
+			if(args[0].equals("-server")) {
+				/* Setting the server */
+				sokoController.setServer(new MyServer(Integer.parseInt(args[1]),new CLI()));			
+				((CLI)(sokoController.getServer()).getCH()).addObserver(sokoController);
+				sokoController.getServer().start();
+			}
+		}
+			
+	}
+		
+}
+	
+	
+

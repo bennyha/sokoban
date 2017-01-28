@@ -1,9 +1,0 @@
-package receuver.save;
-
-public class SaveLevel {
-
-	public SaveLevel() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

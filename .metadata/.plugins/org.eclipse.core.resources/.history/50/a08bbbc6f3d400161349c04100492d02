@@ -1,9 +1,0 @@
-package commands;
-
-public class SaveCommand {
-
-	public SaveCommand() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

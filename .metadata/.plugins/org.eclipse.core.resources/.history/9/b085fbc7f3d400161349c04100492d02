@@ -1,9 +1,0 @@
-package commands;
-
-public class ExitCommand {
-
-	public ExitCommand() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

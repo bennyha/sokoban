@@ -1,9 +1,0 @@
-package receiver;
-
-public class DisplayLevel {
-
-	public DisplayLevel() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

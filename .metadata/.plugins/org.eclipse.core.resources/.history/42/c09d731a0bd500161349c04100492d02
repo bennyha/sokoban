@@ -1,6 +1,0 @@
-package components;
-
-public enum WorldObjectType {
-
-	BOX, FLOOR, PLAYER, WALL, TARGET
-}

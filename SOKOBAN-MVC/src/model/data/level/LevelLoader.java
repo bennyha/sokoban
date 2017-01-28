@@ -1,9 +1,10 @@
 package model.data.level;
 
-public class LevelLoader {
+import java.io.IOException;
+import java.io.InputStream;
 
-	public LevelLoader() {
-		// TODO Auto-generated constructor stub
-	}
+public interface LevelLoader {
 
+	public Level loadLevel(InputStream input) throws IOException;
+	
 }

@@ -1,9 +1,19 @@
 package model.data.level;
 
-public class MyXMLLevelLoader {
+import java.beans.XMLDecoder;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
-	public MyXMLLevelLoader() {
-		// TODO Auto-generated constructor stub
+public class MyXMLLevelLoader implements LevelLoader {
+
+	@Override
+	public Level loadLevel(InputStream input) throws IOException {
+
+		XMLDecoder decoder = new XMLDecoder(new BufferedInputStream((input)));
+		Level level = (Level)decoder.readObject();
+		decoder.close();
+		return level;
 	}
 
 }

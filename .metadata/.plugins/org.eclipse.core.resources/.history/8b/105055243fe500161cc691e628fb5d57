@@ -1,0 +1,9 @@
+package controller.commands;
+
+public class LoadCommand {
+
+	public LoadCommand() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

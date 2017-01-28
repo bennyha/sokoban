@@ -1,0 +1,9 @@
+package controller.commands;
+
+public class MoveCommand {
+
+	public MoveCommand() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

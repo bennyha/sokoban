@@ -1,9 +1,15 @@
 package model;
 
-public class Model {
+import model.data.level.Level;
+import model.receivers.move.Direction;
 
-	public Model() {
-		// TODO Auto-generated constructor stub
-	}
-
+public interface Model {
+	
+	
+	public Level getLevel();
+	public void setLevel(Level level);
+	public void move(Direction direction);
+	
+	
+	
 }

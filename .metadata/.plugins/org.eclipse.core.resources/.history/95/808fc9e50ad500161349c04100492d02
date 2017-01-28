@@ -1,9 +1,0 @@
-package components;
-
-public class WorldObject {
-
-	public WorldObject() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
