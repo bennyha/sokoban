@@ -8,12 +8,12 @@ import java.io.InputStream;
 public class MyXMLLevelLoader implements LevelLoader {
 
 	@Override
-	public Level loadLevel(InputStream input) throws IOException {
+	public Level loadLevel(InputStream in) throws IOException {
 
-		XMLDecoder decoder = new XMLDecoder(new BufferedInputStream((input)));
-		Level newLevel = (Level)decoder.readObject();
+		XMLDecoder decoder = new XMLDecoder(new BufferedInputStream((in)));
+		Level level = (Level)decoder.readObject();
 		decoder.close();
-		return newLevel;
+		return level;
 	}
 
 }

@@ -13,8 +13,8 @@ public class MyObjectLevelLoader implements LevelLoader {
 			throw new IOException("input is not ObjectInputStream instance");
 		try 
 		{
-			Level newLevel = (Level)(((ObjectInputStream)input).readObject());
-			return newLevel;
+			Level level = (Level)(((ObjectInputStream)input).readObject());
+			return level;
 		} catch (ClassNotFoundException e) {e.printStackTrace();}
 		return null;
 	}

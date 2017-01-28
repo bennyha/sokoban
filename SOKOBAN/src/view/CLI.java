@@ -3,80 +3,82 @@ package view;
 import java.io.IOException;
 import java.util.Scanner;
 
-import commands.DisplayCommand;
-import commands.ExitCommand;
-import commands.LoadCommand;
-import commands.MoveCommand;
-import commands.SaveCommand;
+import command.*;
 import level.Level;
-import policy.MySokobanPolicy;
-import receiver.move.Direction;
-import receiver.move.Move;
+import moveable.Moveable;
+import receiver_move.Direction;
+import receiver_move.Move;
 
 public class CLI {
 
-	private Scanner sc = new Scanner(System.in);
-	private String userInput = null;
+	private Scanner scanner = new Scanner(System.in);
+	private String choose = null;
+	private boolean exit = false;
 	private Level level = null;
 	private MoveCommand moveUp = null;
 	private MoveCommand moveDown = null;
 	private MoveCommand moveRight = null;
 	private MoveCommand moveLeft = null;
-	private MySokobanPolicy policy = null;
+	private Moveable moveable = null;
 	private DisplayCommand display = null;
-	private boolean exit = false;
 	
 	public void run() throws IOException {
 				
-		System.out.println("Welcome to Sokoban game!");
-		System.out.println("game commands are:"+"\n"
-							+">Load 'filepath'"+"\n"
-							+">Display"+"\n"
-							+">Move {up, down, left, right}"+"\n"
-							+">Save 'filepath'"+" {*.obj, *.xml}"+"\n"
-							+">Exit"+"\n"+"\n");
+		System.out.println("This is the Sokoban game!");
+		System.out.println("Please choose command:"+"\n"
+							+"Load filename"+"\n"
+							+"Display"+"\n"
+							+"Move {up, down, left, right}"+"\n"
+							+"Save 'filepath'"+" ending"+"\n"
+							+"Exit"+"\n"+"\n");
 		
 		while (!exit) {
-			userInput = sc.nextLine();
-			userInput = userInput.toLowerCase();
-			String[] commands = userInput.split(" ");
+			choose = scanner.nextLine();
+			choose = choose.toLowerCase();
+			String[] command = choose.split(" ");
 			
-			switch(commands[0]) { 
+			switch(command[0]) { 
 			
-			case ">exit": 		exit();
-								break;
+			case "load":
+				if (command.length < 2) {
+				System.out.println("no path");
+				break;
+			}
+			load(command[1]);
+			break;
 			
-			case ">load":		if (commands.length < 2) {
-									System.out.println("no path");
-									break;
-								}
-								load(commands[1]);
-								break;
-								
-			case ">display":	display();
-								break;
-			
-			case ">move":		if (commands.length < 2) {
-									System.out.println("invalid direction");
-									break;
-								}
-								move(commands[1]);
-								break;
+			case "display":	
+				display();
+				break;
 				
-			case ">save":		if (commands.length < 2) {
-									System.out.println("no path");
-									break;
-								}
-								save(commands[1]);
-								break;
+			case "move":		
+				if (command.length < 2) {
+					System.out.println("invalid direction");
+					break;
+					}
+				move(command[1]);
+				break;
+				
+			case "save":		
+				if (command.length < 2) {
+					System.out.println("no path");
+					break;
+					}
+				save(command[1]);
+				break;
 			
-			default:			System.out.println("invalid command");
-								break;
+			case "exit": 		
+				exit();
+				break;
+			
+			default:			
+				System.out.println("invalid command");
+				break;
 			
 			}
 
 		}
-		sc.close();
+		scanner.close();
 		
 	}
 	
@@ -93,16 +95,15 @@ public class CLI {
 		moveLeft = new MoveCommand(new Move(level,level.getPlayer(),Direction.LEFT));
 		moveRight = new MoveCommand(new Move(level,level.getPlayer(),Direction.RIGHT));
 		
-		policy = new MySokobanPolicy(level);
-		
 		display = new DisplayCommand(level);
-		
+		moveable = new Moveable(level);
+				
 	}
 	
 	private void save(String path) throws IOException {
 		
 		if (level == null){
-			System.out.println("there is no level loaded");
+			System.out.println("level is not loaded");
 			return;
 		}
 		SaveCommand saveCommand = new SaveCommand(level,path);
@@ -113,30 +114,35 @@ public class CLI {
 	private void move(String direction) {
 		
 		if (level == null){
-			System.out.println("there is no level loaded");
+			System.out.println("level is not loaded");
 			return;
 		}
 		
 		switch(direction) {
 		
-		case "up":	  policy.execute(moveUp);
-					  display();
-					  break;
+		case "up":	  
+			moveable.execute(moveUp);
+			display();
+			break;
 			 
-		case "down":  policy.execute(moveDown);
-					  display();
-					  break;
+		case "down":  
+			moveable.execute(moveDown);
+			display();
+			break;
 			
-		case "right": policy.execute(moveRight);
-					  display();
-					  break;
+		case "right": 
+			moveable.execute(moveRight);
+			display();
+			break;
 			
-		case "left":  policy.execute(moveLeft);
-				      display();
-					  break;
+		case "left":  
+			moveable.execute(moveLeft);				      
+			display();
+			break;
 			
-		default:	  System.out.println("invalid direction");
-					  break;
+		default:	 
+			System.out.println("invalid direction");
+			break;
 		}
 			
 	}
@@ -145,7 +151,7 @@ public class CLI {
 		
 		if(display == null)
 		{
-			System.out.println("there is no level loaded");
+			System.out.println("level is not loaded");
 			return;
 		}
 		display.execute();
@@ -155,7 +161,6 @@ public class CLI {
 		
 		ExitCommand exitCommand = new ExitCommand();
 		exit = exitCommand.getExit();
-		System.out.println("bye..");
 	}
 	
 	public boolean isExit(){

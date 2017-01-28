@@ -15,7 +15,9 @@ public class Run {
 			{
 				cli.run();	
 			} 
-			catch (IOException e) {e.printStackTrace();}
+			catch (IOException e) {
+				e.printStackTrace();
+				}
 		}
 	}
 }
