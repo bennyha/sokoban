@@ -1,0 +1,10 @@
+package components;
+
+public class Wall extends component {
+	public Wall(int x, int y) {
+		qsuper(x, y);
+
+		// TODO Auto-generated constructor stub
+	}
+
+}

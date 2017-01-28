@@ -1,0 +1,9 @@
+package receivers.load;
+
+public class LoadTextLevel {
+
+	public LoadTextLevel() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
