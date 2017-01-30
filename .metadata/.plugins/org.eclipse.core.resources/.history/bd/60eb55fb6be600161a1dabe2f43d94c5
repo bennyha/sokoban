@@ -1,0 +1,36 @@
+package model;
+
+import java.io.IOException;
+
+import model.data.level.Level;
+import model.receivers.move.Direction;
+import view.CLI;
+
+public interface Model {
+	//Set CLI
+	public void setCli(CLI cli);
+
+	//Load command
+	public void LoadCommand(String CommandLine)throws IOException;
+
+	//Display command
+	public String DisplayCommand();
+
+	//Move command
+	public void MoveCommand(String CommandLine);
+
+	//Save command
+	public void SaveCommand(String CommandLine) throws IOException;
+
+	//Exit command
+	public void ExitCommand();
+
+	//getcurrentLevel
+	public Level getCurrentLevel();
+
+	void move(Direction direction) throws Exception;
+
+	void setLevel(Level level);
+
+	Level getLevel();
+}

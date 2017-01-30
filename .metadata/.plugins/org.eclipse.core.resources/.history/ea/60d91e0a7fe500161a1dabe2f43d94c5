@@ -1,0 +1,9 @@
+package view;
+
+public class GUIDisplayer {
+
+	public GUIDisplayer() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

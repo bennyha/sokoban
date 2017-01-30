@@ -1,0 +1,9 @@
+package view.gui;
+
+public class GuiRun {
+
+	public GuiRun() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

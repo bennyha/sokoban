@@ -1,0 +1,24 @@
+package receiver_display;
+
+import java.util.ArrayList;
+
+import level.Level;
+import components.WorldObject;
+
+public class DisplayLevel {
+	
+	Level level = null;
+	
+	public DisplayLevel(Level level) {this.level = level;}
+	
+	public void display() {
+		
+		for (ArrayList<WorldObject> a : level.getGrid())
+		{
+			for (WorldObject w : a)
+				System.out.print(w.getObjRep());
+			System.out.println();
+		}
+	}
+
+}

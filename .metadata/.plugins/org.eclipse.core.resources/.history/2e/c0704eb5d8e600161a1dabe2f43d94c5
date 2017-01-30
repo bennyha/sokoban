@@ -1,0 +1,8 @@
+package view;
+
+public class MainWindowController {
+	
+	public void start(){
+		System.out.println("start");
+	}
+}

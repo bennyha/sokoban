@@ -1,0 +1,9 @@
+package model.receivers.display;
+
+public class Displayer {
+
+	public Displayer() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

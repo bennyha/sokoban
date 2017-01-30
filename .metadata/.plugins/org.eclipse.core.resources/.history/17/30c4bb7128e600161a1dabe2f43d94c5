@@ -1,0 +1,9 @@
+package view.gui;
+
+public class SokobanGUIController {
+
+	public SokobanGUIController() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

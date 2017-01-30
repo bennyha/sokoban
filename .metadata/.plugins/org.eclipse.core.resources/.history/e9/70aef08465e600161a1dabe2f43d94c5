@@ -1,0 +1,9 @@
+package controller.commands;
+
+public class AbstractCommand {
+
+	public AbstractCommand() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

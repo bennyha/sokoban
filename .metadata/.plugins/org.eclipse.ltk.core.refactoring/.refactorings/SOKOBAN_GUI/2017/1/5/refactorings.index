@@ -1,0 +1,22 @@
+1485694878482	Rename package 'model.data.worldObjects'
+1485694905339	Rename type 'WorldObject'
+1485694925829	Rename type 'Box'
+1485694945806	Rename type 'WorldObjectType'
+1485695361881	Rename package 'model.policy'
+1485695382597	Rename type 'MySokobanPolicy'
+1485695402874	Rename type 'Policy'
+1485696619320	Move compilation unit
+1485721378907	Move compilation unit
+1485722424581	Delete element
+1485722847712	Delete element
+1485722900409	Rename type 'GUIDisplayer'
+1485772405868	Delete element
+1485772903181	Move file
+1485772905468	Move file
+1485772911058	Move compilation unit
+1485778636508	Delete element
+1485778957234	Move files
+1485779392240	Delete element
+1485779406805	Move compilation unit
+1485779423890	Move files
+1485779430103	Delete element

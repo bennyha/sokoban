@@ -1,0 +1,10 @@
+package view;
+
+public class MainWindowController {
+	
+	
+	public void sart() {
+		System.out.println("start");
+		
+	}
+}

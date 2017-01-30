@@ -1,0 +1,11 @@
+package model.receivers.load;
+
+import java.io.IOException;
+
+import model.data.level.level.Level;
+
+public interface LoadLevel {
+
+	Level load(String path) throws IOException;
+	
+}

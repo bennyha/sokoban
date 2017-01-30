@@ -1,9 +1,0 @@
-package controller.client;
-
-public class CLIclient {
-
-	public CLIclient() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

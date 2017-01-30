@@ -1,0 +1,9 @@
+package view;
+
+public class SokobanDisplayer {
+
+	public SokobanDisplayer() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

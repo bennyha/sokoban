@@ -1,0 +1,9 @@
+package model.receivers.display;
+
+public class CLIDisplayer {
+
+	public CLIDisplayer() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

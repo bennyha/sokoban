@@ -1,6 +1,0 @@
-package model.data.components;
-
-public enum ComponentsType {
-
-	BOX, FLOOR, PLAYER, WALL, TARGET
-}
